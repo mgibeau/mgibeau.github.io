@@ -1,0 +1,22 @@
+{
+  "name": "maxjbo.com",
+  "version": "0.0.1",
+  "homepage": "http://www.maxjbo.com/",
+  "authors": [
+    "Maxime Gibeau"
+  ],
+  "main": "index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/js/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.9.1",
+    "skrollr": "~0.6.21"
+  }
+}

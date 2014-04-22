@@ -1,0 +1,313 @@
+@import "compass/css3";
+@import "animation";
+@import "images";
+
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+        list-style: none;
+    }
+}
+
+.vcard {
+    position: relative;
+    top: 6em;
+    display: block;
+    width: 9em;
+    margin: 0 auto;
+
+    &:first-letter {
+        float: left;
+        font-size: 3.4em;
+        line-height: 0.5em;
+    }
+
+    .given-name {
+        display: none;
+    }
+
+    .family-name {
+        display: block;
+        text-transform: lowercase;
+    }
+
+    .category {
+        margin-top: 0.5em;
+        font-size: 0.6em;
+        font-weight: normal;
+        text-align: right;
+        text-transform: lowercase;
+    }
+}
+
+.slide-content {
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+
+    h1, h2 {
+        margin-top: 0;
+
+        small {
+            display: block;
+        }
+    }
+
+    h2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 3em;
+        line-height: 0.9;
+        text-align: center;
+        text-transform: uppercase;
+
+        @media screen and (min-width: 480px) {
+            font-size: 5em;
+        }
+
+        @media screen and (min-width: 1024px) {
+            font-size: 7em;
+        }
+    }
+}
+
+#skroll {
+    background-position: center center;
+    background-attachment: fixed;
+    background-image: url('/static/images/stardust.png');
+}
+
+#header-slide {
+    height: 1400px;
+
+    .slide-content {
+        background-size: initial;
+        background-repeat: repeat;
+    }
+
+    .scroll-hint {
+        position: absolute;
+        bottom: 60%;
+        left: 50%;
+        margin-left: -27px;
+        width: 55px;
+        height: 55px;
+        @include animation(bounce 2s infinite);
+    }
+}
+
+#skills-slide {
+    height: 1200px;
+
+    h2 {
+
+    }
+
+    .slide-content {
+        text-align: center;
+    }
+}
+
+.skills-list {
+    position: relative;
+    padding-top: 10em;
+
+    li {
+        position: relative;
+        display: inline-block;
+        margin-right: 1em;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-indent: -9999px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .html {
+        width: 107px;
+        height: 125px;
+        @include logo(html5, svg);
+    }
+
+    .css {
+        width: 89px;
+        height: 125px;
+        @include logo(css3, svg);
+    }
+
+    .sass {
+        position: relative;
+        top: 16px;
+        width: 148px;
+        height: 111px;
+        @include logo(sass, png);
+    }
+
+    .twbs {
+        position: relative;
+        top: 24px;
+        width: 99px;
+        height: 99px;
+        @include logo(twbs, svg);
+    }
+
+    .git {
+        position: relative;
+        top: 24px;
+        width: 238px;
+        height: 99px;
+        @include logo(git, png);
+    }
+
+    .javascript {
+        position: relative;
+        top: 24px;
+        width: 99px;
+        height: 99px;
+        @include logo(js, svg);
+    }
+
+    .python {
+        position: relative;
+        top: 24px;
+        width: 99px;
+        height: 128px;
+        @include logo(python, svg);
+    }
+
+    .django {
+        position: relative;
+        top: 24px;
+        width: 258px;
+        height: 90px;
+        @include logo(django, svg);
+    }
+
+    .php {
+        position: relative;
+        top: 24px;
+        width: 186px;
+        height: 99px;
+        @include logo(php, svg);
+    }
+
+    .wordpress {
+        position: relative;
+        top: 24px;
+        width: 353px;
+        height: 123px;
+        @include logo(wordpress, svg);
+    }
+
+    .magento {
+        position: relative;
+        top: 24px;
+        width: 353px;
+        height: 123px;
+        @include logo(magento, png);
+    }
+}
+
+#showcase-slide {
+    height: 2800px;
+
+    .slide-content {
+        padding-top: 10em;
+        text-align: center;
+    }
+}
+
+.showcase-list {
+    position: relative;
+    top: 0;
+    width: 2800px;
+
+    li {
+        overflow: hidden;
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        @include transform(skew(-20deg, 0));
+
+        img {
+            @include transform(skew(20deg, 0));
+        }
+    }
+}
+
+#footer-slide {
+    height: 1915px;
+    position: relative;
+
+    .slide-content {
+        opacity: 0;
+        height: 1915px;
+        background-image: url('/static/images/earth60.jpg');
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-attachment: scroll;
+
+        &.blur {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            background-image: url('/static/images/earth60blur.jpg');
+        }
+
+        .content {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+
+    .footer-list {
+        position: absolute;
+        top: 40%;
+        left: 40%;
+
+        .email .adr {
+            &:before {
+                content: "info";
+            }
+
+            &:after {
+                content: "maxjbo.com";
+            }
+        }
+    }
+
+    small {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+    }
+}

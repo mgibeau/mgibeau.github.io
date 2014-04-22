@@ -1,0 +1,3 @@
+@mixin logo($file, $ext) {
+    background-image: url('/static/images/#{$file}_logo.#{$ext}');
+}
